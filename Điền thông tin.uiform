@@ -1,0 +1,61 @@
+﻿{
+  "Metadata": {
+    "Id": "c4c73d82-9487-4140-9429-35650a5b8ee7",
+    "Kind": "FormIo"
+  },
+  "DesignProperties": {
+    "Title": "Điền thông tin",
+    "Theme": "Default",
+    "ShowInTaskbar": true,
+    "ShowMargin": true,
+    "CustomStyle": ""
+  },
+  "Data": {
+    "components": [
+      {
+        "label": "Đường dẫn file excel kết quả PV",
+        "tableView": true,
+        "key": "LinkExcelPV",
+        "type": "textfield",
+        "input": true
+      },
+      {
+        "label": "Nhập đường dẫn mẫu Email Offer",
+        "tableView": true,
+        "key": "PathEmailMau",
+        "type": "textfield",
+        "input": true
+      },
+      {
+        "label": "Vị trí tuyển dụng",
+        "tableView": true,
+        "key": "Position",
+        "type": "textfield",
+        "input": true
+      },
+      {
+        "label": "Hạn xác nhận email",
+        "placeholder": "DD/MM/YYYY",
+        "tableView": true,
+        "key": "DeadlineConfirm",
+        "type": "textfield",
+        "input": true
+      },
+      {
+        "label": "Email HR",
+        "tableView": true,
+        "key": "emailHr",
+        "type": "textfield",
+        "input": true
+      },
+      {
+        "type": "button",
+        "label": "Gửi Email",
+        "key": "submit",
+        "disableOnInvalid": true,
+        "input": true,
+        "tableView": false
+      }
+    ]
+  }
+}
