@@ -1,0 +1,7 @@
+ Chào [Name],
+
+Chúc mừng bạn đã vượt qua vòng sàng lọc hồ sơ cho vị trí [Position] tại công ty chúng tôi.
+Chúng tôi xin mời bạn tham gia buổi phỏng vấn vào ngày [InterviewDate].
+
+Trân trọng,
+Phòng Nhân sự
