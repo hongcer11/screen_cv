@@ -35,6 +35,7 @@
       },
       {
         "label": "Hạn xác nhận email",
+        "placeholder": "DD/MM/YYYY",
         "tableView": true,
         "key": "DeadlineConfirm",
         "type": "textfield",
@@ -49,7 +50,7 @@
       },
       {
         "type": "button",
-        "label": "Submit",
+        "label": "Gửi Email",
         "key": "submit",
         "disableOnInvalid": true,
         "input": true,
