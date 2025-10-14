@@ -2,6 +2,11 @@
   "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
   "entryPoints": [
     {
+      "filePath": "email_sending.xaml",
+      "uniqueId": "ed9f9e24-e916-49df-818c-9da2142f3d55",
+      "type": "process"
+    },
+    {
       "filePath": "Main.xaml",
       "uniqueId": "970c403a-af7e-43f7-b7cb-facb5d06dac9",
       "type": "process"

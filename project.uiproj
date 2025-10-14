@@ -2,5 +2,5 @@
   "Name": "Screening",
   "ProjectType": "Process",
   "Description": "Blank Process",
-  "MainFile": "Main.xaml"
+  "MainFile": "email_sending.xaml"
 }
