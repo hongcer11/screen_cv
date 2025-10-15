@@ -42,13 +42,6 @@
         "input": true
       },
       {
-        "label": "Email HR",
-        "tableView": true,
-        "key": "emailHr",
-        "type": "textfield",
-        "input": true
-      },
-      {
         "type": "button",
         "label": "Gửi Email",
         "key": "submit",
