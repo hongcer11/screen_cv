@@ -283,7 +283,7 @@
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="email_sending" sap:VirtualizedContainerService.HintSize="638.6666666666666,6710.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
-    </sco:Collection>
+  </Sequence>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="email_sending" sap:VirtualizedContainerService.HintSize="746,6388.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
