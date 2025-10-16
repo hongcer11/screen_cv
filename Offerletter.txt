@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Thư Mời Nhận Việc</title>
+</head>
+<body style="font-family: Arial, sans-serif; font-size: 11pt; color: #333; margin: 0; padding: 0;">
+
+    <p>Kính gửi <b>[Name]</b>,</p>
+
+    <p>Chúc mừng bạn đã vượt qua quá trình tuyển dụng cho vị trí <b>[Position]</b> tại công ty chúng tôi. Chúng tôi trân trọng gửi đến bạn Thư mời nhận việc với thông tin chi tiết như sau:</p>
+
+    <table style="width: 100%; max-width: 600px; border: 1px solid #ddd; border-collapse: collapse; margin-top: 15px;">
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd; width: 30%; background-color: #f2f2f2; font-weight: bold;">Vị trí</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[Position]</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd; background-color: #f2f2f2; font-weight: bold;">Mức lương</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[Salary] VNĐ</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd; background-color: #f2f2f2; font-weight: bold;">Ngày bắt đầu</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[StartDate]</td>
+        </tr>
+    </table>
+    <p style="margin-top: 20px;">Vui lòng xác nhận với chúng tôi qua email trước <b>[ConfirmDeadline]</b>.</p>
+
+    <p>Trân trọng,<br>Phòng Nhân sự</p>
+</body>
+</html>
