@@ -20,13 +20,6 @@
         "input": true
       },
       {
-        "label": "Nhập đường dẫn mẫu Email Offer",
-        "tableView": true,
-        "key": "PathEmailMau",
-        "type": "textfield",
-        "input": true
-      },
-      {
         "label": "Vị trí tuyển dụng",
         "tableView": true,
         "key": "Position",
