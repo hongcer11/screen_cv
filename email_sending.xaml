@@ -282,7 +282,7 @@
       <AssemblyReference>System.Net.Sockets</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="email_sending" sap:VirtualizedContainerService.HintSize="638.6666666666666,6534" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="email_sending" sap:VirtualizedContainerService.HintSize="690,6476.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="r" />
       <Variable x:TypeArguments="ss:SecureString" Name="Password" />
@@ -377,7 +377,7 @@
         <InArgument x:TypeArguments="x:String">[Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "UiPath_Offers")]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="524,124" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[folderpath]" />
+    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="524,89.33333333333333" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[folderpath]" />
     <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[dt_Ketqua]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="524,120" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="Screen" WorkbookPath="[linkexcel]" />
     <ui:FilterDataTable DataTable="[dt_Ketqua]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="524,196" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_passed]" SelectColumnsMode="Remove">
       <ui:FilterDataTable.Filters>
@@ -398,7 +398,7 @@
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
     </ui:FilterDataTable>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_passed]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="524,5139.333333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_passed]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="524,5116.666666666667" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
