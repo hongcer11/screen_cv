@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Thư Mời Nhận Việc</title>
+    <title>Thư Mời Nhận Việc - Công ty ViBES</title>
 </head>
 <body style="font-family: Arial, sans-serif; font-size: 11pt; color: #333; margin: 0; padding: 0;">
 
@@ -26,6 +26,6 @@
     </table>
     <p style="margin-top: 20px;">Vui lòng xác nhận với chúng tôi qua email trước <b>[ConfirmDeadline]</b>.</p>
 
-    <p>Trân trọng,<br>Phòng Nhân sự</p>
+    <p>Trân trọng,<br>Phòng Nhân sự Công ty ViBES</p>
 </body>
 </html>
