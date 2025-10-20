@@ -284,13 +284,9 @@
       <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="email_sending" sap:VirtualizedContainerService.HintSize="690,5637.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="email_sending" sap:VirtualizedContainerService.HintSize="624.6666666666666,6032" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:Int32" Name="r">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" Value="2" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Int32" Default="2" Name="r" />
       <Variable x:TypeArguments="ss:SecureString" Name="Password" />
       <Variable x:TypeArguments="x:String" Name="linkexcel" />
       <Variable x:TypeArguments="x:String" Name="linkemail" />
@@ -367,25 +363,6 @@
         <InArgument x:TypeArguments="x:String">["Offerletter.txt"]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="524,339.3333333333333" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,227.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_9">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="416,167.33333333333334" sap2010:WorkflowViewState.IdRef="Assign_1">
-            <Assign.To>
-              <OutArgument x:TypeArguments="x:String">[dateconfirm]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="s:DateTime">[DateTime.Now]</InArgument>
-            </Assign.Value>
-          </Assign>
-        </Sequence>
-      </ui:CommentOut.Body>
-    </ui:CommentOut>
     <Assign sap:VirtualizedContainerService.HintSize="524,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_10">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[folderpath]</OutArgument>
@@ -415,13 +392,13 @@
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
     </ui:FilterDataTable>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_passed]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="524,3912.6666666666665" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_passed]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="524,4646.666666666667" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="522,4378.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="522,4462.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="status" />
             </Sequence.Variables>
@@ -430,9 +407,9 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="488,3176.6666666666665" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="488,3260.6666666666665" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <TryCatch.Try>
-                <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="486,2684.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="486,2768.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="variable1" />
                     <Variable x:TypeArguments="x:String" Name="attachmentsList" />
@@ -513,7 +490,7 @@
                       </ActivityAction>
                     </p:WordApplicationScope.Body>
                   </p:WordApplicationScope>
-                  <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentList="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID0}" ReplyTo="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Existing" AuthScopesInvalid="False" Body="[EmailBody]" ConnectionId="716ed122-59b5-455f-afa2-b2bd88b414eb" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="452,513.3333333333334" sap2010:WorkflowViewState.IdRef="SendMailConnections_1" Importance="[UiPath.MicrosoftOffice365.Activities.Mail.Enums.Importance.Low]" InputType="HTML" SaveAsDraft="False" Subject="[&quot;Thư mời nhận việc  -  &quot; + vitri +&quot; - Công ty ViBES&quot;]" To="[{email.ToString}]" UseConnectionService="True" UseSharedMailbox="False">
+                  <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentList="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID0}" ReplyTo="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Existing" AuthScopesInvalid="False" Body="[EmailBody]" ConnectionId="716ed122-59b5-455f-afa2-b2bd88b414eb" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="452,597.3333333333334" sap2010:WorkflowViewState.IdRef="SendMailConnections_1" Importance="[UiPath.MicrosoftOffice365.Activities.Mail.Enums.Importance.Low]" InputType="HTML" SaveAsDraft="False" Subject="[&quot;Thư mời nhận việc  -  &quot; + vitri +&quot; - Công ty ViBES&quot;]" To="[{email.ToString}]" UseConnectionService="True" UseSharedMailbox="False">
                     <umam:SendMailConnections.AttachmentsBackup>
                       <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="Existing">
                         <usau:BackupSlot.BackupValues>
@@ -531,7 +508,7 @@
                     <umam:SendMailConnections.MailboxArg>
                       <umamm:MailboxArgument SharedMailbox="{x:Null}" UseSharedMailbox="False">
                         <umamm:MailboxArgument.Backup>
-                          <usau:BackupSlot x:TypeArguments="umame:MailboxSelectionMode" x:Name="__ReferenceID0" StoredValue="NoMailbox">
+                          <usau:BackupSlot x:TypeArguments="umame:MailboxSelectionMode" x:Name="__ReferenceID0" StoredValue="UseISMailbox">
                             <usau:BackupSlot.BackupValues>
                               <scg:List x:TypeArguments="x:Object" x:Key="NoMailbox" Capacity="1">
                                 <x:Null />
@@ -600,8 +577,8 @@
                 </Sequence>
               </TryCatch.Finally>
             </TryCatch>
-            <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[&quot;R1&quot;+r.ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="488,148" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Interview" Text="[mailStatus]" WorkbookPath="[linkexcel]" />
-            <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[&quot;S1&quot;+r.ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="488,148" sap2010:WorkflowViewState.IdRef="WriteCell_2" SheetName="Interview" Text="[Now.ToString(&quot;dd/MM/yyyy&quot;)]" WorkbookPath="[linkexcel]" />
+            <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[&quot;R&quot;+r.ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="488,148" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Interview" Text="[mailStatus]" WorkbookPath="[linkexcel]" />
+            <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[&quot;S&quot;+r.ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="488,148" sap2010:WorkflowViewState.IdRef="WriteCell_2" SheetName="Interview" Text="[Now.ToString(&quot;dd/MM/yyyy&quot;)]" WorkbookPath="[linkexcel]" />
             <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="488,339.3333333333333" sap2010:WorkflowViewState.IdRef="CommentOut_3">
               <ui:CommentOut.Body>
                 <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,227.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_10">
