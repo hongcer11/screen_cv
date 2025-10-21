@@ -284,7 +284,6 @@
       <AssemblyReference>System.Net.NetworkInformation</AssemblyReference>
       <AssemblyReference>System.Net.Ping</AssemblyReference>
       <AssemblyReference>System.Net.Sockets</AssemblyReference>
-      <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="email_sending" sap:VirtualizedContainerService.HintSize="626.6666666666666,5228.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -330,7 +329,15 @@
         <OutArgument x:TypeArguments="x:String">[linkemail]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">["Offerletter.txt"]</InArgument>
+        <InArgument x:TypeArguments="x:String">[linkemail.Substring(1, linkemail.Length - 2)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="524,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:DateTime">[dlconfirm]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:DateTime">[DateTime.Now]</InArgument>
       </Assign.Value>
     </Assign>
     <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[dt_Ketqua]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="488,120" sap2010:WorkflowViewState.IdRef="ReadRange_5" SheetName="Interview" WorkbookPath="[linkexcel]" />
