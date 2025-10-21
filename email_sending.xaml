@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="email_sending" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="email_sending_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ucas="clr-namespace:UiPath.Core.Activities.Storage;assembly=UiPath.System.Activities" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:umam="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umame="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umamm="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Models;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="email_sending" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="email_sending_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ucas="clr-namespace:UiPath.Core.Activities.Storage;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:umam="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umame="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umamm="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Models;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -148,6 +148,9 @@
       <x:String>System.Net.Security</x:String>
       <x:String>System.Net.Sockets</x:String>
       <x:String>UiPath.Platform</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Excel.Models</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -284,9 +287,9 @@
       <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="email_sending" sap:VirtualizedContainerService.HintSize="624.6666666666666,6032" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="email_sending" sap:VirtualizedContainerService.HintSize="940.6666666666666,4748" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:Int32" Default="2" Name="r" />
+      <Variable x:TypeArguments="x:Int32" Name="r" />
       <Variable x:TypeArguments="ss:SecureString" Name="Password" />
       <Variable x:TypeArguments="x:String" Name="linkexcel" />
       <Variable x:TypeArguments="x:String" Name="linkemail" />
@@ -314,48 +317,15 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ufa:ShowFormActivity InstanceName="{x:Null}" Left="{x:Null}" Title="{x:Null}" Top="{x:Null}" DisplayName="Show Form" FormId="c4c73d82-9487-4140-9429-35650a5b8ee7" sap:VirtualizedContainerService.HintSize="524,225.33333333333334" sap2010:WorkflowViewState.IdRef="ShowFormActivity_1" IsAsync="False" WindowState="[UiPath.Studio.Forms.Runtime.WindowState.Normal]">
-      <ufa:ShowFormActivity.Arguments>
-        <OutArgument x:TypeArguments="x:String" x:Key="LinkExcelPV">[linkexcel]</OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="PathEmailMau">[linkemail]</OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="Position">[vitri]</OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="DeadlineConfirm">[dateconfirm]</OutArgument>
-      </ufa:ShowFormActivity.Arguments>
-      <ufa:ShowFormActivity.Height>
-        <InArgument x:TypeArguments="s:Nullable(x:Int32)">
-          <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="600" />
-        </InArgument>
-      </ufa:ShowFormActivity.Height>
-      <ufa:ShowFormActivity.ShowInTaskbar>
-        <InArgument x:TypeArguments="s:Nullable(x:Boolean)">
-          <Literal x:TypeArguments="s:Nullable(x:Boolean)" Value="True" />
-        </InArgument>
-      </ufa:ShowFormActivity.ShowInTaskbar>
-      <ufa:ShowFormActivity.ShowMargin>
-        <InArgument x:TypeArguments="s:Nullable(x:Boolean)">
-          <Literal x:TypeArguments="s:Nullable(x:Boolean)" Value="True" />
-        </InArgument>
-      </ufa:ShowFormActivity.ShowMargin>
-      <ufa:ShowFormActivity.TopMost>
-        <InArgument x:TypeArguments="s:Nullable(x:Boolean)">
-          <Literal x:TypeArguments="s:Nullable(x:Boolean)" Value="True" />
-        </InArgument>
-      </ufa:ShowFormActivity.TopMost>
-      <ufa:ShowFormActivity.Width>
-        <InArgument x:TypeArguments="s:Nullable(x:Int32)">
-          <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="500" />
-        </InArgument>
-      </ufa:ShowFormActivity.Width>
-    </ufa:ShowFormActivity>
-    <Assign sap:VirtualizedContainerService.HintSize="524,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_9">
+    <Assign sap:VirtualizedContainerService.HintSize="488,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_9">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[linkexcel]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[linkexcel.Substring(1, linkexcel.Length - 2)]</InArgument>
+        <InArgument x:TypeArguments="x:String">["Data\EcommerceExecutive_2025-10-16.xlsx"]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="524,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_8">
+    <Assign sap:VirtualizedContainerService.HintSize="488,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_8">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[linkemail]</OutArgument>
       </Assign.To>
@@ -363,25 +333,18 @@
         <InArgument x:TypeArguments="x:String">["Offerletter.txt"]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="524,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_10">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[folderpath]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "UiPath_Offers")]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="524,124" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[folderpath]" />
-    <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[dt_Ketqua]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="524,120" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="Interview" WorkbookPath="[linkexcel]" />
-    <ui:FilterDataTable DataTable="[dt_Ketqua]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="524,196" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_passed]" SelectColumnsMode="Remove">
+    <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[dt_Ketqua]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="488,120" sap2010:WorkflowViewState.IdRef="ReadRange_5" SheetName="Interview" WorkbookPath="[linkexcel]" />
+    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Sending Status" DataTable="[dt_passed]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="488,223.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_15" />
+    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Date Sending" DataTable="[dt_passed]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="488,223.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_16" />
+    <ui:FilterDataTable DataTable="[dt_Ketqua]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="488,196" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_passed]" SelectColumnsMode="Remove">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
           <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
             <ui:FilterOperationArgument.Column>
-              <InArgument x:TypeArguments="x:String">["Result"]</InArgument>
+              <InArgument x:TypeArguments="x:String">["Result (Fail/Pass)"]</InArgument>
             </ui:FilterOperationArgument.Column>
             <ui:FilterOperationArgument.Operand>
-              <InArgument x:TypeArguments="x:String">["Passed"]</InArgument>
+              <InArgument x:TypeArguments="x:String">["Pass"]</InArgument>
             </ui:FilterOperationArgument.Operand>
           </ui:FilterOperationArgument>
         </scg:List>
@@ -392,13 +355,13 @@
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
     </ui:FilterDataTable>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_passed]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="524,4646.666666666667" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_passed]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="488,3442" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="522,4462.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,3258" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="status" />
             </Sequence.Variables>
@@ -407,9 +370,9 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="488,3260.6666666666665" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="452,3198" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <TryCatch.Try>
-                <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="486,2768.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="450,2715.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="variable1" />
                     <Variable x:TypeArguments="x:String" Name="attachmentsList" />
@@ -420,7 +383,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="452,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_2">
+                  <Assign sap:VirtualizedContainerService.HintSize="416,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_2">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[name]</OutArgument>
                     </Assign.To>
@@ -428,7 +391,7 @@
                       <InArgument x:TypeArguments="x:String">[CurrentRow("CandidateName").ToString]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Assign sap:VirtualizedContainerService.HintSize="452,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_14">
+                  <Assign sap:VirtualizedContainerService.HintSize="416,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_14">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[email]</OutArgument>
                     </Assign.To>
@@ -436,7 +399,7 @@
                       <InArgument x:TypeArguments="x:String">[CurrentRow("Email").ToString]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Assign sap:VirtualizedContainerService.HintSize="452,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_15">
+                  <Assign sap:VirtualizedContainerService.HintSize="416,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_15">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[salary]</OutArgument>
                     </Assign.To>
@@ -444,53 +407,49 @@
                       <InArgument x:TypeArguments="x:String">[CurrentRow("Salary (VND)").ToString]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Assign sap:VirtualizedContainerService.HintSize="452,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_16">
+                  <Assign sap:VirtualizedContainerService.HintSize="416,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_16">
                     <Assign.To>
                       <OutArgument x:TypeArguments="s:DateTime">[datetostart]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="s:DateTime">[Convert.ToDateTime(CurrentRow("Start Date"))]</InArgument>
+                      <InArgument x:TypeArguments="s:DateTime">[If(Double.TryParse(CurrentRow("Start Date").ToString, New Double), DateTime.FromOADate(Convert.ToDouble(CurrentRow("Start Date"))), DateTime.ParseExact(CurrentRow("Start Date").ToString, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture))]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:ReadTextFile File="{x:Null}" Content="[EmailBody]" DisplayName="Read Text File" FileName="[linkemail]" sap:VirtualizedContainerService.HintSize="452,124" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
-                  <Assign sap:VirtualizedContainerService.HintSize="452,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_31">
+                  <Assign sap:VirtualizedContainerService.HintSize="416,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_34">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="s:DateTime">[dlconfirm]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="s:DateTime">[DateTime.ParseExact(CurrentRow("Deadline confirm").ToString, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="416,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_35">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[vitri]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[CurrentRow("Position").ToString]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:ReadTextFile File="{x:Null}" Content="[EmailBody]" DisplayName="Read Text File" FileName="[linkemail]" sap:VirtualizedContainerService.HintSize="416,124" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+                  <Assign sap:VirtualizedContainerService.HintSize="416,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_31">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[EmailBody]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">[EmailBody.Replace("[Name]", name.ToString()).Replace("[Position]", vitri.ToString()).Replace("[Salary]", salary.ToString()).Replace("[StartDate]", datetostart.ToString("dd/MM/yyyy")).Replace("[ConfirmDeadline]", dateconfirm)]</InArgument>
+                      <InArgument x:TypeArguments="x:String">[EmailBody.Replace("[Name]", name.ToString()).Replace("[Position]", vitri.ToString()).Replace("[Salary]", salary.ToString()).Replace("[StartDate]", datetostart.ToString("dd/MM/yyyy")).Replace("[ConfirmDeadline]", dlconfirm.toString("dd/MM/yyyy"))]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Assign sap:VirtualizedContainerService.HintSize="452,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_32">
+                  <Assign sap:VirtualizedContainerService.HintSize="416,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_32">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[filepathdox]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">[Path.Combine(folderpath, name + "_OfferTemp.html")]</InArgument>
+                      <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine("OfferLetter", name + "_OfferTemp.html")]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:WriteTextFile File="{x:Null}" Output="{x:Null}" DisplayName="Write Text File" FileName="[filepathdox]" sap:VirtualizedContainerService.HintSize="452,176.66666666666666" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[EmailBody]" />
-                  <p:WordApplicationScope SensitivityLabel="{x:Null}" DisplayName="Word Application Scope" FilePath="[filepathdox]" sap:VirtualizedContainerService.HintSize="452,406.6666666666667" sap2010:WorkflowViewState.IdRef="WordApplicationScope_3" SensitivityOperation="None">
-                    <p:WordApplicationScope.Body>
-                      <ActivityAction x:TypeArguments="ui:WordDocument">
-                        <ActivityAction.Argument>
-                          <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
-                        </ActivityAction.Argument>
-                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,274.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_7">
-                          <Sequence.Variables>
-                            <Variable x:TypeArguments="x:String" Name="EmailBodyString" />
-                          </Sequence.Variables>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <p:WordSaveAs DisplayName="Save Document As" FilePath="[Path.Combine(folderpath, name + &quot;_Offer.docx&quot;)]" sap:VirtualizedContainerService.HintSize="416,214.66666666666666" sap2010:WorkflowViewState.IdRef="WordSaveAs_2" />
-                        </Sequence>
-                      </ActivityAction>
-                    </p:WordApplicationScope.Body>
-                  </p:WordApplicationScope>
-                  <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentList="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID0}" ReplyTo="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Existing" AuthScopesInvalid="False" Body="[EmailBody]" ConnectionId="716ed122-59b5-455f-afa2-b2bd88b414eb" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="452,597.3333333333334" sap2010:WorkflowViewState.IdRef="SendMailConnections_1" Importance="[UiPath.MicrosoftOffice365.Activities.Mail.Enums.Importance.Low]" InputType="HTML" SaveAsDraft="False" Subject="[&quot;Thư mời nhận việc  -  &quot; + vitri +&quot; - Công ty ViBES&quot;]" To="[{email.ToString}]" UseConnectionService="True" UseSharedMailbox="False">
+                  <ui:WriteTextFile File="{x:Null}" Output="{x:Null}" DisplayName="Write Text File" FileName="[filepathdox]" sap:VirtualizedContainerService.HintSize="416,176.66666666666666" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[EmailBody]" />
+                  <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentList="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID0}" ReplyTo="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Existing" AuthScopesInvalid="False" Body="[EmailBody]" ConnectionId="716ed122-59b5-455f-afa2-b2bd88b414eb" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="416,597.3333333333334" sap2010:WorkflowViewState.IdRef="SendMailConnections_1" Importance="[UiPath.MicrosoftOffice365.Activities.Mail.Enums.Importance.Low]" InputType="HTML" SaveAsDraft="False" Subject="[&quot;Thư mời nhận việc  -  &quot; + vitri +&quot; - Công ty ViBES&quot;]" To="[{email.ToString}]" UseConnectionService="True" UseSharedMailbox="False">
                     <umam:SendMailConnections.AttachmentsBackup>
                       <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="Existing">
                         <usau:BackupSlot.BackupValues>
@@ -525,7 +484,7 @@
                       </umamm:MailboxArgument>
                     </umam:SendMailConnections.MailboxArg>
                   </umam:SendMailConnections>
-                  <Assign sap:VirtualizedContainerService.HintSize="452,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_18">
+                  <Assign sap:VirtualizedContainerService.HintSize="416,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_18">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[mailStatus]</OutArgument>
                     </Assign.To>
@@ -533,7 +492,7 @@
                       <InArgument x:TypeArguments="x:String">["Yes"]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Assign sap:VirtualizedContainerService.HintSize="452,167.33333333333334" sap2010:WorkflowViewState.IdRef="Assign_13">
+                  <Assign sap:VirtualizedContainerService.HintSize="416,167.33333333333334" sap2010:WorkflowViewState.IdRef="Assign_13">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Object">[CurrentRow("Date Sending")]</OutArgument>
                     </Assign.To>
@@ -549,13 +508,13 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,227.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,227.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_6">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign sap:VirtualizedContainerService.HintSize="452,167.33333333333334" sap2010:WorkflowViewState.IdRef="Assign_19">
+                      <Assign sap:VirtualizedContainerService.HintSize="416,167.33333333333334" sap2010:WorkflowViewState.IdRef="Assign_19">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[mailStatus]</OutArgument>
                         </Assign.To>
@@ -568,7 +527,7 @@
                 </Catch>
               </TryCatch.Catches>
               <TryCatch.Finally>
-                <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="486,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="450,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -577,58 +536,10 @@
                 </Sequence>
               </TryCatch.Finally>
             </TryCatch>
-            <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[&quot;R&quot;+r.ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="488,148" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Interview" Text="[mailStatus]" WorkbookPath="[linkexcel]" />
-            <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="[&quot;S&quot;+r.ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="488,148" sap2010:WorkflowViewState.IdRef="WriteCell_2" SheetName="Interview" Text="[Now.ToString(&quot;dd/MM/yyyy&quot;)]" WorkbookPath="[linkexcel]" />
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="488,339.3333333333333" sap2010:WorkflowViewState.IdRef="CommentOut_3">
-              <ui:CommentOut.Body>
-                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,227.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="416,167.33333333333334" sap2010:WorkflowViewState.IdRef="Assign_28">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:Object">[CurrentRow("Status Sending")]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">[mailStatus]</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                </Sequence>
-              </ui:CommentOut.Body>
-            </ui:CommentOut>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="488,339.3333333333333" sap2010:WorkflowViewState.IdRef="CommentOut_4">
-              <ui:CommentOut.Body>
-                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,227.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_11">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="416,167.33333333333334" sap2010:WorkflowViewState.IdRef="Assign_29">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:Object">[CurrentRow("Date Sending")]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">[Now.ToString("dd/MM/yyyy")]</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                </Sequence>
-              </ui:CommentOut.Body>
-            </ui:CommentOut>
-            <Assign sap:VirtualizedContainerService.HintSize="488,167.33333333333334" sap2010:WorkflowViewState.IdRef="Assign_33">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:Int32">[r]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:Int32">[r+1]</InArgument>
-              </Assign.Value>
-            </Assign>
           </Sequence>
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="524,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Quy trình gửi thư mời nhận việc đã hoàn thành. Vui lòng kiểm tra thư mục lưu trữ.&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="488,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Quy trình gửi thư mời nhận việc đã hoàn thành. Vui lòng kiểm tra thư mục lưu trữ.&quot;]" />
   </Sequence>
 </Activity>
