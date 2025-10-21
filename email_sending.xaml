@@ -287,7 +287,7 @@
       <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="email_sending" sap:VirtualizedContainerService.HintSize="940.6666666666666,4748" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="email_sending" sap:VirtualizedContainerService.HintSize="626.6666666666666,5228.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="r" />
       <Variable x:TypeArguments="ss:SecureString" Name="Password" />
@@ -334,8 +334,8 @@
       </Assign.Value>
     </Assign>
     <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[dt_Ketqua]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="488,120" sap2010:WorkflowViewState.IdRef="ReadRange_5" SheetName="Interview" WorkbookPath="[linkexcel]" />
-    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Sending Status" DataTable="[dt_passed]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="488,223.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_15" />
-    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Date Sending" DataTable="[dt_passed]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="488,223.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_16" />
+    <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Sending Status" DataTable="[dt_Ketqua]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="488,223.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_19" />
+    <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Date Sending" DataTable="[dt_Ketqua]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="488,223.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_20" />
     <ui:FilterDataTable DataTable="[dt_Ketqua]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="488,196" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_passed]" SelectColumnsMode="Remove">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
@@ -355,13 +355,13 @@
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
     </ui:FilterDataTable>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_passed]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="488,3442" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_passed]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="488,3774.6666666666665" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,3258" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,3590.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="status" />
             </Sequence.Variables>
@@ -370,13 +370,14 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="452,3198" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="452,3530.6666666666665" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <TryCatch.Try>
-                <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="450,2715.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="450,3048" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="variable1" />
                     <Variable x:TypeArguments="x:String" Name="attachmentsList" />
                     <Variable x:TypeArguments="x:String" Name="filepathdox" />
+                    <Variable x:TypeArguments="x:Int32" Name="rowIndex" />
                   </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -484,6 +485,7 @@
                       </umamm:MailboxArgument>
                     </umam:SendMailConnections.MailboxArg>
                   </umam:SendMailConnections>
+                  <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dt_Ketqua]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="416,332.6666666666667" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="Email" LookupValue="[CurrentRow(&quot;Email&quot;).ToString]" RowIndex="[rowIndex]" />
                   <Assign sap:VirtualizedContainerService.HintSize="416,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_18">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[mailStatus]</OutArgument>
@@ -494,7 +496,7 @@
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="416,167.33333333333334" sap2010:WorkflowViewState.IdRef="Assign_13">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Object">[CurrentRow("Date Sending")]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Object">[dt_Ketqua.Rows(rowIndex)("Date Sending")]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
                       <InArgument x:TypeArguments="x:String">[Now.ToString("dd/MM/yyyy")]</InArgument>
@@ -540,6 +542,7 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
+    <ui:WriteRange StartingCell="{x:Null}" WorkbookPathResource="{x:Null}" DataTable="[dt_Ketqua]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="488,148" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Interview" WorkbookPath="[linkexcel]" />
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="488,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Quy trình gửi thư mời nhận việc đã hoàn thành. Vui lòng kiểm tra thư mục lưu trữ.&quot;]" />
   </Sequence>
 </Activity>

@@ -119,7 +119,7 @@
       <AssemblyReference>UiPath.Word.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="SendInterviewLetter" sap:VirtualizedContainerService.HintSize="630.6666666666666,270.32333333333327" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="SendInterviewLetter" sap:VirtualizedContainerService.HintSize="632.6666666666666,265.65666666666664" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:Int32" Default="0" Name="failCount" />
       <Variable x:TypeArguments="x:Int32" Default="0" Name="successCount" />
@@ -129,6 +129,7 @@
       <Variable x:TypeArguments="x:String" Name="email" />
       <Variable x:TypeArguments="x:String" Name="mailBody" />
       <Variable x:TypeArguments="x:String" Name="managerEmail" />
+      <Variable x:TypeArguments="x:Int32" Name="index" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -233,7 +234,7 @@
                                           <av:PointCollection x:Key="ConnectorLocation">330.2,605.4 330.2,645</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[InterviewData]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="488,2956.6666666666665" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                                      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[index]" DataTable="[InterviewData]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="488,2956.6666666666665" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
                                         <ui:ForEachRow.Body>
                                           <ActivityAction x:TypeArguments="sd:DataRow">
                                             <ActivityAction.Argument>
